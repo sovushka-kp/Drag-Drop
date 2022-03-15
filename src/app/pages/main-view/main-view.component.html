@@ -11,10 +11,7 @@
     <div class="board-bar">
       <p class="board-name">Name</p>
     </div>
-
-    <div class="add-button-div">
-      <button class="add-button">Add</button>
-    </div>
+    <app-add-form (newItemEvent)="addItem($event)"></app-add-form>
 
     <div class="board-wrapper">
       <div class="board-columns" cdkDropListGroup>

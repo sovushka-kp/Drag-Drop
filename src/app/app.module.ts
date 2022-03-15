@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { MainViewComponent } from './pages/main-view/main-view.component';
 
 import {DragDropModule} from "@angular/cdk/drag-drop";
+import { AddFormComponent } from './pages/main-view/add-form/add-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainViewComponent
+    MainViewComponent,
+    AddFormComponent
   ],
   imports: [
     BrowserModule,

@@ -9,20 +9,11 @@ import {Column} from "./models/column.model";
   styleUrls: ['./main-view.component.scss']
 })
 export class MainViewComponent implements OnInit {
-
+  tasks = ['i', 'love'];
   constructor() { }
 
   board: Board = new Board('Test Board', [
-    new Column('Idea', [
-      'Some randome idea',
-    'This is another random idea',
-    'create an awesome application'
-    ]),
-    new Column('Research', [
-      'I',
-      'Love',
-      'You'
-    ]),
+    new Column('Research', this.tasks),
     new Column('ToDo', [
       'I 2',
       'Love 2',
@@ -38,18 +29,6 @@ export class MainViewComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  todo = [
-    'lol',
-    'loool',
-    'loooool'
-  ];
-
-  done = [
-    '12',
-    '123',
-    '1234'
-  ];
-
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
@@ -61,4 +40,7 @@ export class MainViewComponent implements OnInit {
     }
   }
 
+  addItem(newItem: string) {
+    this.tasks.push(newItem);
+  }
 }
